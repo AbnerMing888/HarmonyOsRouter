@@ -1,0 +1,1 @@
+export { SharedRouterConfig } from './SharedRouterConfig'

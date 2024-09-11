@@ -1,0 +1,9 @@
+{
+  "module": {
+    "name": "static",
+    "type": "har",
+    "deviceTypes": [
+      "default"
+    ]
+  }
+}

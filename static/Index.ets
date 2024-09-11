@@ -1,0 +1,1 @@
+export { StaticRouterConfig } from './StaticRouterConfig'
