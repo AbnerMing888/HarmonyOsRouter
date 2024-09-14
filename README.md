@@ -44,7 +44,7 @@ modelVersion：5.0.0
 方式一：在需要Module中的oh-package.json5中设置三方包依赖，配置示例如下：
 
 ```
-"dependencies": { "@abner/router": "^1.0.0"}
+"dependencies": { "@abner/router": "^1.0.1"}
 ```
 
 方式二：在Terminal窗口中，执行如下命令安装三方包，DevEco Studio会自动在工程的oh-package.json5中自动添加三方包依赖。
@@ -58,7 +58,7 @@ ohpm install @abner/router
 最终会在使用的模块中，生成一个oh_modules文件，并创建源代码文件，有则成功，无则失败，如下：
 
 
-<p align="center"><img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/net/net_243_003.png" width="300"></p>
+<p align="center"><img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/router/router_01.jpg" width="300"></p>
 
 
 ### 第二步，配置插件
@@ -69,12 +69,12 @@ ohpm install @abner/router
 
 找到项目中的hvigor目录，在hvigor-config.json5文件中dependencies配置插件。
 
-代码如下：当前版本为：1.0.7
+代码如下：当前版本为：1.0.8
 
 ```typescript
 "dependencies": {
-    "ohos-router": "1.0.7"
-  }
+  "ohos-router": "1.0.8"
+}
 ```
 
 #### 执行插件方法
@@ -83,8 +83,8 @@ ohpm install @abner/router
 
 ```typescript
 plugins:[
-       abnerRouter()
-    ]
+  abnerRouter()
+]
 ```
 
 导包：
@@ -260,8 +260,8 @@ startPage("shared_show_params", { param: map })
   // let map = params as string[] //数组
   // let map = params as SharedBean //对象
   // let map = params as HashMap<string, Object>//如果是传递的map，自己遍历即可
-    
-  }
+
+}
 ```
 
 ### 4、返回上一页面
@@ -290,11 +290,11 @@ finishPage()
 
 ```typescript
 startPage("static_return_params", {
-              result: (params) => {
-                //获取返回的数据
-                console.log("==========" + params?.toString())
-              }
-            })
+  result: (params) => {
+    //获取返回的数据
+    console.log("==========" + params?.toString())
+  }
+})
 ```
 
 销毁页面时携带返回数据即可。
@@ -302,6 +302,41 @@ startPage("static_return_params", {
 ```typescript
    finishPage({ param: "我是返回的数据" })
 ```
+
+### 8、关于生命周期
+
+当子组件使用了NavDestination之后，会和组件的生命周期发生冲突，为解决这个问题，大家可以使用NavDestination的生命周期进行解决。
+
+目前提供了setRouterLifeCycle方法用于监听其生命周期，可以在子页面中进行实现。
+
+案例如下：
+
+```typescript
+  aboutToAppear(): void {
+    setRouterLifeCycle({
+      onShown: () => {
+        console.log("==========显示")
+      },
+      onHidden: () => {
+        console.log("==========隐藏")
+      }
+    })
+  }
+```
+
+相关方法一览：
+
+| 方法      | 概述 |
+|---------|----|
+|onWillAppear|NavDestination创建后，挂载到组件树之前执行，在该方法中更改状态变量会在当前帧显示生效|
+|onAppear|通用生命周期事件，NavDestination组件挂载到组件树时执行。|
+|onWillShow|NavDestination组件布局显示之前执行，此时页面不可见（应用切换到前台不会触发）。|
+| onShown | NavDestination组件布局显示之后执行，此时页面已完成布局。   |
+|onWillHide|NavDestination组件触发隐藏之前执行（应用切换到后台不会触发）。|
+|onHidden|NavDestination组件触发隐藏后执行（非栈顶页面push进栈，栈顶页面pop出栈或应用切换到后台）|
+|onWillDisappear|NavDestination组件即将销毁之前执行，如果有转场动画，会在动画前触发（栈顶页面pop出栈）|
+|onDisappear|通用生命周期事件，NavDestination组件从组件树上卸载销毁时执行。|
+
 
 ## 三、常见方法汇总
 
@@ -330,7 +365,7 @@ startPage("static_return_params", {
 | routerGetParams                | 无参                                                                          | 获取传递的参数                                                                                                              |
 
 
-## 四、咨询作者
+## 四、咨询或关注作者
 
 如果您在使用上有问题，解决不了，或者查看精华的鸿蒙技术文章，可扫码进行操作。
 
@@ -354,8 +389,3 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
-
-
-
-
-

@@ -64,5 +64,4 @@ export function viewBuilder(_: Object) {
   }
   .hideTitleBar(true)
   .height('100%')
-
 }

@@ -1,4 +1,4 @@
-import { RouterConfig, routerGetBuilderType, routerInitBuilder } from '@abner/router';
+import { NavDestinationView, RouterConfig, routerGetBuilderType, routerInitBuilder } from '@abner/router';
 import { EntryPage } from './src/main/ets/pages/EntryPage';
 import { BackPage01 } from './src/main/ets/pages/BackPage01';
 import { BackPage02 } from './src/main/ets/pages/BackPage02';
@@ -42,7 +42,7 @@ export class EntryRouterConfig implements RouterConfig {
 
 @Builder
 export function viewBuilder(value: Object) {
-  NavDestination() {
+  NavDestinationView() {
     if (routerGetBuilderType() == "entry_main") {
       EntryPage()
     } else if (routerGetBuilderType() == "entry_back_01") {
@@ -52,6 +52,7 @@ export function viewBuilder(value: Object) {
     } else if (routerGetBuilderType() == "entry_back_03") {
       BackPage03()
     }
-  }.hideTitleBar(true)
-
+  }
 }
+
+

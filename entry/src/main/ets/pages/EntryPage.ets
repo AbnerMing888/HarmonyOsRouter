@@ -1,4 +1,4 @@
-import { finishPage } from '@abner/router'
+import { finishPage, setARouter, setRouterLifeCycle } from '@abner/router'
 
 /**
  * AUTHOR:AbnerMing
@@ -7,6 +7,17 @@ import { finishPage } from '@abner/router'
  * */
 @Component
 export struct EntryPage {
+  aboutToAppear(): void {
+    setRouterLifeCycle({
+      onShown: () => {
+        console.log("==========显示")
+      },
+      onHidden: () => {
+        console.log("==========隐藏")
+      }
+    })
+  }
+
   build() {
     Column() {
       RelativeContainer() {
@@ -36,7 +47,6 @@ export struct EntryPage {
 
     }.width("100%")
     .height("100%")
-
   }
 }
 

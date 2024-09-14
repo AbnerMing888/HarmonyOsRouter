@@ -1,9 +1,8 @@
 import {
   routerInitNavPathStack,
   routerReturnBuilder,
-  startPage,
-  startPageByName,
-  startPageDestination
+  routerSetInterception,
+  startPage
 } from '@abner/router';
 
 @Entry

@@ -3,6 +3,7 @@ import { finishPage } from '@abner/router'
 @Entry()
 @Component
 export struct SharedIndex {
+
   build() {
     Column() {
       RelativeContainer() {
