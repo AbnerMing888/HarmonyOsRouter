@@ -44,7 +44,7 @@ modelVersion：5.0.0
 方式一：在需要Module中的oh-package.json5中设置三方包依赖，配置示例如下：
 
 ```
-"dependencies": { "@abner/router": "^1.0.1"}
+"dependencies": { "@abner/router": "^1.0.2"}
 ```
 
 方式二：在Terminal窗口中，执行如下命令安装三方包，DevEco Studio会自动在工程的oh-package.json5中自动添加三方包依赖。
@@ -364,8 +364,49 @@ startPage("static_return_params", {
 | routerInitConfig               | routerConfig?: RouterConfig\[\]                                             | 初始化配置                                                                                                                |
 | routerGetParams                | 无参                                                                          | 获取传递的参数                                                                                                              |
 
+## 四、结合bar组件使用
 
-## 四、咨询或关注作者
+如果你想结合我的另一个开源库bar进行使用，那么需要更换插件，由ohos-router切换到abner-router，其他都不变
+
+```text
+"abner-router": "1.0.0"
+```
+
+主页面,只需使用MainView即可。
+
+```typescript
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      MainView() {
+        //其他组件
+      }
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
+```
+
+子页面,使用组件TitleLayout，可以携带顶部标题
+
+```typescript
+@Component
+struct TestPage {
+  build() {
+    TitleLayout({
+      title:"我是标题"
+    }) {
+      //任意组件
+    }
+  }
+}
+```
+
+
+## 五、咨询作者
 
 如果您在使用上有问题，解决不了，或者查看精华的鸿蒙技术文章，可扫码进行操作。
 

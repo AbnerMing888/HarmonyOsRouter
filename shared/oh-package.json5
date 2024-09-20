@@ -7,6 +7,6 @@
   "license": "Apache-2.0",
   "packageType": "InterfaceHar",
   "dependencies": {
-    "@abner/router": "file:../libs/router-1.0.1.har"
+    "@abner/router": "file:../libs/router-1.0.2.har"
   }
 }

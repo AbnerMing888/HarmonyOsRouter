@@ -1,4 +1,4 @@
-import { finishPage, setARouter, setRouterLifeCycle } from '@abner/router'
+import { finishPage, setRouterLifeCycle } from '@abner/router'
 
 /**
  * AUTHOR:AbnerMing
