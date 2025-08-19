@@ -1,27 +1,21 @@
-import { finishPage, setRouterLifeCycle } from '@abner/router'
+import { finishPage, RouterPath, setRouterLifeCycle } from '@abner/router'
 
 /**
  * AUTHOR:AbnerMing
  * DATE:2024/9/4
  * INTRODUCE:entry 下的page测试
  * */
+@RouterPath("entry_main")
 @Component
 export struct EntryPage {
   aboutToAppear(): void {
-    setRouterLifeCycle({
-      onShown: () => {
-        console.log("==========显示")
-      },
-      onHidden: () => {
-        console.log("==========隐藏")
-      }
-    })
+
   }
 
   build() {
     Column() {
       RelativeContainer() {
-        Text("我是entry的页面")
+        Text("我是entry模块的页面")
           .fontSize(20)
           .fontColor(Color.White)
           .alignRules({
@@ -47,6 +41,7 @@ export struct EntryPage {
 
     }.width("100%")
     .height("100%")
+
   }
 }
 

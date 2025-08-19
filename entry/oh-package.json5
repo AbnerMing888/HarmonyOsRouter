@@ -6,7 +6,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "@abner/router": "file:../libs/router-1.0.2.har",
+    "@abner/router": "file:../libs/router-signed-1.0.5.har",
     "@abner/static": "file:../static",
     "@abner/shared": "file:../shared",
   }

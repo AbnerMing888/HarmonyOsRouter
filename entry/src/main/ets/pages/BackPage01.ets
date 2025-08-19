@@ -5,7 +5,7 @@ import { finishPage, RouterPath, startPage } from '@abner/router'
  * DATE:2024/9/4
  * INTRODUCE:测试返回
  * */
-@RouterPath("entry_back")
+@RouterPath("entry_back_01")
 @Component
 export struct BackPage01 {
   build() {

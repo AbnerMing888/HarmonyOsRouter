@@ -1,5 +1,6 @@
-import { finishPage } from '@abner/router';
+import { finishPage, RouterPath } from '@abner/router';
 
+@RouterPath("static_main")
 @Component
 export struct StaticPage {
   build() {

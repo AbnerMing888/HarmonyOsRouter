@@ -1,10 +1,11 @@
-import { finishPage, routerGetParams } from '@abner/router'
+import { finishPage, routerGetParams, RouterPath } from '@abner/router'
 
 /**
  * AUTHOR:AbnerMing
  * DATE:2024/9/7
  * INTRODUCE:接收各种类型参数
  * */
+@RouterPath("shared_show_params")
 @Component
 export struct SharedShowParams {
   aboutToAppear(): void {

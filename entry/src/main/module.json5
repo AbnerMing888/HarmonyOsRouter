@@ -1,8 +1,8 @@
 {
   "module": {
+    "srcEntry": "./ets/App.ets",
     "name": "entry",
     "type": "entry",
-    "srcEntry": "./ets/App.ets",
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
     "deviceTypes": [

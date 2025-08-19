@@ -1,10 +1,11 @@
-import { finishPage, finishPageToName, routerClearPage } from '@abner/router'
+import { finishPage, finishPageToName, routerClearPage, RouterPath } from '@abner/router'
 
 /**
  * AUTHOR:AbnerMing
  * DATE:2024/9/4
  * INTRODUCE:测试返回
  * */
+@RouterPath("entry_back_03")
 @Component
 export struct BackPage03 {
   build() {

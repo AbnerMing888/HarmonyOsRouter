@@ -1,10 +1,11 @@
-import { finishPage, startPage } from '@abner/router'
+import { finishPage, RouterPath, routerRemoveByName, startPage } from '@abner/router'
 
 /**
  * AUTHOR:AbnerMing
  * DATE:2024/9/7
  * INTRODUCE:跨组件跳转，跳转到其他组件的页面
  * */
+@RouterPath("shared_step")
 @Component
 export struct SharedStepPage {
   build() {

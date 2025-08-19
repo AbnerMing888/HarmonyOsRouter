@@ -1,6 +1,20 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\GW00261583\\.ohos\\config\\default_HarmonyOsRouter_83v5ycmGF44OyVjOf4SiaKadzpPWNVUk4KlOnY_cUgg=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BF10D46B3DEA1E109442F8D3235CCF103141636113EDFC0E546B56526CE06CE60E1995FDBEA691B",
+          "profile": "C:\\Users\\GW00261583\\.ohos\\config\\default_HarmonyOsRouter_83v5ycmGF44OyVjOf4SiaKadzpPWNVUk4KlOnY_cUgg=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\GW00261583\\.ohos\\config\\default_HarmonyOsRouter_83v5ycmGF44OyVjOf4SiaKadzpPWNVUk4KlOnY_cUgg=.p12",
+          "storePassword": "0000001B58335AA72E4FA08CA920A93CE8341FA839E71D6F150E64C10D2B8302730EA2120D690576A11732"
+        }
+      }
+    ],
     "products": [
       {
         "name": "default",
@@ -39,6 +53,10 @@
     {
       "name": "static",
       "srcPath": "./static",
+    },
+    {
+      "name": "router",
+      "srcPath": "./router",
     },
     {
       "name": "shared",

@@ -1,7 +1,9 @@
-import { finishPage, routerGetParams, startPage } from '@abner/router'
+import { finishPage, routerGetParams, RouterPath, startPage } from '@abner/router'
 import { SharedBean } from './SharedBean'
 import { HashMap } from '@kit.ArkTS'
 
+
+@RouterPath("shared_params")
 @Component
 export struct SharedParams {
   @State stringParams?: string = ""

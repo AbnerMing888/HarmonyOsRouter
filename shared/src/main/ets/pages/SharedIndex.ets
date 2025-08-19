@@ -1,5 +1,6 @@
-import { finishPage } from '@abner/router'
+import { finishPage, RouterPath } from '@abner/router'
 
+@RouterPath("shared_main")
 @Entry()
 @Component
 export struct SharedIndex {

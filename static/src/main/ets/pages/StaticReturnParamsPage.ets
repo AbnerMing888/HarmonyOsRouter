@@ -1,10 +1,11 @@
-import { finishPage } from '@abner/router';
+import { finishPage, RouterPath } from '@abner/router';
 
 /**
  * AUTHOR:AbnerMing
  * DATE:2024/9/7
  * INTRODUCE:返回参数
  * */
+@RouterPath("static_return_params")
 @Component
 export struct StaticReturnParamsPage {
   build() {
