@@ -4,9 +4,8 @@
     "arkOptions": {
       "runtimeOnly": {
         "packages": [
-          "@abner/router",
-          "@abner/static",
-          "@abner/shared"
+          "static",
+          "shared"
         ]
       }
     }

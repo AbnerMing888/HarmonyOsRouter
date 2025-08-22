@@ -13,13 +13,13 @@
 执行跳转
 
 ```typescript
- startPage("test")
+ startPage("entry_test")
 ```
 
 相关页面
 
 ```typescript
-@RouterPath("test")
+@RouterPath("entry_test")
 @Component
 export struct Test{
   build(){
@@ -41,10 +41,10 @@ modelVersion：5.0.0
 
 ### 第一步，配置依赖项
 
-方式一：在需要Module中的oh-package.json5中设置三方包依赖，配置示例如下：
+方式一：由于是所有的模块都需要依赖，这里在根项目中的oh-package.json5中设置三方包依赖，配置示例如下,
 
 ```
-"dependencies": { "@abner/router": "^1.0.5"}
+"dependencies": { "@abner/router": "^1.0.6"}
 ```
 
 方式二：在Terminal窗口中，执行如下命令安装三方包，DevEco Studio会自动在工程的oh-package.json5中自动添加三方包依赖。
@@ -55,25 +55,17 @@ modelVersion：5.0.0
 ohpm install @abner/router
 ```
 
-最终会在使用的模块中，生成一个oh_modules文件，并创建源代码文件，有则成功，无则失败，如下：
-
-
-<p align="center"><img src="https://vipandroid-image.oss-cn-beijing.aliyuncs.com/harmony/router/router_01.jpg" width="300"></p>
-
-
 ### 第二步，配置插件
-
-配置插件前，请务必保障你的**所有Module**都依赖了@abner/router，当然你也可以采用中间件的方式进行依赖。
 
 #### 依赖插件
 
 找到项目中的hvigor目录，在hvigor-config.json5文件中dependencies配置插件。
 
-代码如下：当前版本为：1.1.4
+代码如下：当前版本为：1.2.2
 
 ```typescript
 "dependencies": {
-  "ohos-router": "1.1.4"
+  "ohos-router": "1.2.2"
 }
 ```
 
@@ -81,25 +73,26 @@ ohpm install @abner/router
 
 打开根目录中的hvigorfile.ts文件，在plugins数组中导入方法：
 
-```typescript
-plugins:[
-  abnerRouter()
-]
-```
-
 导包：
 
 ```typescript
 import { abnerRouter } from 'ohos-router/router-plugin';
 ```
 
+调用方法：
+
+```typescript
+plugins:[
+  abnerRouter()
+]
+```
+
+
 插件完成之后，编译项目，你会发现，每个Module中，都会生成一个路由配置文件，以Module名字+RouterConfig为文件命名。
 此路由配置文件为自动生成，无特殊情况下无须改动，当然,再有特殊情况下，你可以进行手动更正。
 
 
 ## 一、基本配置
-
-要实现Module之间跳转，**@abner/router**这个依赖是必须的，要求每个Module都必须进行依赖，如果你的项目里有中间件，可以直接放到中间件里。
 
 ### 1、全局初始化【自动生成，仅做了解】
 
@@ -218,7 +211,6 @@ export struct TestPage {
 }
 ```
 
-
 ## 二、基本使用
 
 ### 1、普通跳转
@@ -331,15 +323,15 @@ startPage("static_return_params", {
 
 ```typescript
   aboutToAppear(): void {
-    setRouterLifeCycle({
-      onShown: () => {
-        console.log("==========显示")
-      },
-      onHidden: () => {
-        console.log("==========隐藏")
-      }
-    })
-  }
+  setRouterLifeCycle({
+    onShown: () => {
+      console.log("==========显示")
+    },
+    onHidden: () => {
+      console.log("==========隐藏")
+    }
+  })
+}
 ```
 
 相关方法一览：

@@ -6,6 +6,6 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@abner/router": "file:../libs/router-signed-1.0.5.har"
+
   }
 }

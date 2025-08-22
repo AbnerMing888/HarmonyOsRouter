@@ -27,7 +27,7 @@ function importPath(builderName: string) {
  * INTRODUCE:动态配置组件
  * */
 @Builder
-export function viewBuilder() {
+export function viewBuilder(params?:Object) {
   NavDestinationView() {
     if (routerGetBuilderType() == "static_step") {
       StaticStepPage()
@@ -46,7 +46,7 @@ export function viewBuilder() {
 
 /**
  * AUTHOR:AbnerMing
- * DATE:2025年8月19日 11时14分3秒
+ * DATE:2025年8月22日 10时26分6秒
  * INTRODUCE:路由配置,此路由配置文件为自动生成，无特殊情况下请无须改动
  * */
 export class StaticRouterConfig implements RouterConfig {
