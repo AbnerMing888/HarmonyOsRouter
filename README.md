@@ -44,7 +44,7 @@ modelVersion：5.0.0
 方式一：由于是所有的模块都需要依赖，这里在根项目中的oh-package.json5中设置三方包依赖，配置示例如下,
 
 ```
-"dependencies": { "@abner/router": "^1.0.6"}
+"dependencies": { "@abner/router": "^1.0.7"}
 ```
 
 方式二：在Terminal窗口中，执行如下命令安装三方包，DevEco Studio会自动在工程的oh-package.json5中自动添加三方包依赖。
