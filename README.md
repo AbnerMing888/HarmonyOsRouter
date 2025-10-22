@@ -61,11 +61,11 @@ ohpm install @abner/router
 
 找到项目中的hvigor目录，在hvigor-config.json5文件中dependencies配置插件。
 
-代码如下：当前版本为：1.2.2
+代码如下：当前版本为：1.2.3
 
 ```typescript
 "dependencies": {
-  "ohos-router": "1.2.2"
+  "ohos-router": "1.2.3"
 }
 ```
 
