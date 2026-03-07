@@ -28,13 +28,9 @@ export struct Test{
 }
 ```
 
-## 开发环境
+## API支持版本
 
-DevEco Studio NEXT Developer Beta1,Build Version: 5.1.1.823
-
-Api版本：**12**
-
-modelVersion：5.0.0
+Api版本：**>=12**
 
 
 ## 快速使用
@@ -44,7 +40,7 @@ modelVersion：5.0.0
 方式一：由于是所有的模块都需要依赖，这里在根项目中的oh-package.json5中设置三方包依赖，配置示例如下,
 
 ```
-"dependencies": { "@abner/router": "^1.0.7"}
+"dependencies": { "@abner/router": "^1.0.8"}
 ```
 
 方式二：在Terminal窗口中，执行如下命令安装三方包，DevEco Studio会自动在工程的oh-package.json5中自动添加三方包依赖。
@@ -61,11 +57,11 @@ ohpm install @abner/router
 
 找到项目中的hvigor目录，在hvigor-config.json5文件中dependencies配置插件。
 
-代码如下：当前版本为：1.2.3
+代码如下：当前版本为：1.2.5
 
 ```typescript
 "dependencies": {
-  "ohos-router": "1.2.3"
+  "ohos-router": "1.2.5"
 }
 ```
 
@@ -84,6 +80,22 @@ import { abnerRouter } from 'ohos-router/router-plugin';
 ```typescript
 plugins:[
   abnerRouter()
+]
+```
+
+以上的方式，会针对项目的中的动态共享包和静态共享包，都会在目录下生成路由配置文件，并在初始化中也会配置，如果你想个性化定制，比如
+某一个模块，不生成配置，可以使用下面的过滤方法:
+
+导包由abnerRouter切换为abnerRouterFilter
+
+```typescript
+import { abnerRouterFilter } from 'ohos-router/router-plugin';
+```
+调用方法由abnerRouter切换为abnerRouterFilter：第一个参数是否开启插件，默认true开启，第二个参数是过滤的模块名字，支持多个。
+
+```typescript
+plugins:[
+  abnerRouterFilter(true,["你的过滤模块"])
 ]
 ```
 
@@ -174,6 +186,22 @@ export struct TestPage {
   }
 }
 ```
+
+为了方便大家针对UI页面创建，目前开发了一个对应的插件，大家安装之后，便可自动生成。
+
+[插件下载](https://abnerming888.github.io/vip/load/HarmonyOSAppRouterSign-1.0.jar)
+
+下载之后本地安装插件
+
+<p align="center">
+<img src="https://loveharmony.oss-cn-beijing.aliyuncs.com/weight/router/router_001.jpg" width="400px" />
+</p>
+
+插件安装之后，在需要创建UI页面的地方，右键找到Router Page选择合适的进行创建即可。
+
+<p align="center">
+<img src="https://loveharmony.oss-cn-beijing.aliyuncs.com/weight/router/router_002.jpg" width="400px" />
+</p>
 
 ### 4、注解使用
 
